@@ -105,7 +105,7 @@ def add_to_cart(melon_id):
     
     cart[melon_id] = cart[melon_id] + 1 if melon_id in cart else 1
 
-    flash(f'You have added {len(session["cart"])} melon(s) to your cart!', "info")
+    flash(f'You have added {len(session["cart"])} melon(s) to your cart!', "success")
 
     # - check if a "cart" exists in the session, and create one (an empty
     #   dictionary keyed to the string "cart") if not
@@ -145,6 +145,8 @@ def process_login():
     #   message and redirect the user to the "/melons" route
     # - if they don't, flash a failure message and redirect back to "/login"
     # - do the same if a Customer with that email doesn't exist
+
+    user = request.form
 
     return "Oops! This needs to be implemented"
 
